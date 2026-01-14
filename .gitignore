@@ -1,0 +1,5 @@
+$RECYCLE.BIN/
+System Volume Information/
+.vscode/
+__pycache__/
+*.pyc
