@@ -1,16 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Flask Project</title>
+    <meta charset="UTF-8">
+    <title>{{ profile.name }} | Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #1e3c72, #2a5298);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 40px;
+        }
+        h1, h2 {
+            color: #ffdd57;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #ffdd57;
+            color: black;
+            padding: 8px 15px;
+            margin: 8px 0;
+            border-radius: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome {{ name }}</h1>
 
-    <h3>My Skills</h3>
-    <ul>
-        {% for skill in skills %}
-            <li>{{ skill }}</li>
+<div class="container">
+
+    <div class="card">
+        <h1>Hii, I'm {{ profile.name }} 👋</h1>
+        <h3>{{ profile.role }}</h3>
+        <p>{{ profile.about }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Skills</h2>
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Projects</h2>
+        {% for project in projects %}
+            <p><strong>{{ project.title }}</strong> – {{ project.desc }}</p>
         {% endfor %}
-    </ul>
+    </div>
+
+</div>
+
 </body>
 </html>
