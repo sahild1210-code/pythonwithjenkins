@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DevOps CI/CD Pipeline</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="icons">⚙️ 🚀 🐳 ☁️ 🔁</div>
+
+<div class="card">
+    <h1 id="typewriter"></h1>
+    <div class="subtitle">Git • GitHub • Jenkins • Flask</div>
+
+    <div class="team">
+        <p class="name">⚡ Sahil Deshmukh</p>
+        <p class="role">DevOps Engineer</p>
+
+        <p class="name purva">✨ Purva Hase</p>
+        <p class="role">DevOps Engineer</p>
+    </div>
+
+    <button onclick="showStatus()">Check Pipeline</button>
+    <p id="status"></p>
+</div>
+
+<script>
+const text = "🚀 DevOps CI/CD Pipeline";
+let index = 0;
+
+function typeWriter() {
+    if (index < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 80);
+    }
+}
+typeWriter();
+
+function showStatus() {
+    const status = document.getElementById("status");
+    status.innerHTML = "⏳ Jenkins building...";
+    setTimeout(() => {
+        status.innerHTML = "✅ Build SUCCESS | CI/CD Pipeline LIVE";
+    }, 2000);
+}
+</script>
+
+</body>
+</html>
