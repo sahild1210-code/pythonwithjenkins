@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #000428, #004e92, #000428);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.icons {
+    position: absolute;
+    top: 20px;
+    font-size: 30px;
+    opacity: 0.4;
+    animation: floatIcons 6s ease-in-out infinite;
+}
+
+@keyframes floatIcons {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(40px); }
+    100% { transform: translateX(0); }
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 45px;
+    border-radius: 20px;
+    text-align: center;
+    width: 460px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 40px rgba(0,255,255,0.3);
+    animation: cardEntry 1.5s ease;
+}
+
+@keyframes cardEntry {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 15px cyan;
+}
+
+.subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.team {
+    margin-top: 30px;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold;
+    animation: float 3s ease-in-out infinite, glow 2s infinite alternate;
+}
+
+.name.purva {
+    color: #ff9cff;
+    animation: float 3s ease-in-out infinite, glowPink 2s infinite alternate;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px cyan; }
+    to { text-shadow: 0 0 25px cyan; }
+}
+
+@keyframes glowPink {
+    from { text-shadow: 0 0 10px #ff9cff; }
+    to { text-shadow: 0 0 25px #ff9cff; }
+}
+
+.role {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, cyan, #00ff99);
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 25px cyan;
+}
+
+#status {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #00ff99;
+}
